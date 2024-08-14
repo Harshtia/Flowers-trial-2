@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87CEEB, #87CEEB 50%, #7CFC00 50%, #7CFC00);
+    height: 100vh;
+}
+
+.sun {
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 50px 20px rgba(255, 223, 0, 0.8);
+    animation: sunMovement 10s linear infinite;
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background: green;
+    box-shadow: inset 0 0 10px rgba(0, 128, 0, 0.5);
+}
+
+.flowers {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.flower {
+    width: 20px;
+    height: 60px;
+    background: linear-gradient(to top, green 0%, green 70%, white 70%, white 100%);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6);
+    animation: wave 4s ease-in-out infinite;
+}
+
+.flower:nth-child(odd) {
+    animation-duration: 5s;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes sunMovement {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+}
